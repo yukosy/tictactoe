@@ -1,7 +1,9 @@
-import org.junit.Assert;
-import org.junit.Test;
+import com.tictactoe.entity.Cells;
+import com.tictactoe.entity.EasyPlayer;
+import com.tictactoe.entity.Player;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
 
 public class EasyPlayerTest {
 
@@ -29,22 +31,7 @@ public class EasyPlayerTest {
             }
         }
 
-        Assert.assertEquals(min, 1);
-        Assert.assertEquals(max, 3);
-    }
-
-    @Test
-    public void setSymbol() {
-        Cells expected = new Cells();
-        Cells actual = new Cells();
-
-        Player player = new EasyPlayer(expected);
-        player.setMySymbol("X");
-
-        player.setSymbol(new int[]{1,1});
-
-        actual.setValue(1,1,"X");
-
-        assertEquals(expected.getValue(1,1), actual.getValue(1,1));
+        Assertions.assertEquals(min, 1);
+        Assertions.assertEquals(max, 3);
     }
 }

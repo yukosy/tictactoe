@@ -1,7 +1,7 @@
-import org.junit.Assert;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import com.tictactoe.entity.Cells;
+import com.tictactoe.entity.MediumPlayer;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class MediumPlayerTest {
 
@@ -17,8 +17,8 @@ public class MediumPlayerTest {
         int[] expected = player.canWinNextStep("X");
         int[] actual = new int[]{1,3};
 
-        Assert.assertEquals(expected[0], actual[0]);
-        Assert.assertEquals(expected[1], actual[1]);
+        Assertions.assertEquals(expected[0], actual[0]);
+        Assertions.assertEquals(expected[1], actual[1]);
     }
 
     @Test
@@ -42,23 +42,7 @@ public class MediumPlayerTest {
             }
         }
 
-        Assert.assertEquals(min, 1);
-        Assert.assertEquals(max, 3);
-    }
-
-
-    @Test
-    public void setSymbol() {
-        Cells expected = new Cells();
-        Cells actual = new Cells();
-
-        Player player = new MediumPlayer(expected);
-        player.setMySymbol("X");
-
-        player.setSymbol(new int[]{1,1});
-
-        actual.setValue(1,1,"X");
-
-        assertEquals(expected.getValue(1,1), actual.getValue(1,1));
+        Assertions.assertEquals(min, 1);
+        Assertions.assertEquals(max, 3);
     }
 }

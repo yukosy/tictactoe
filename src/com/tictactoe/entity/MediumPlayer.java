@@ -1,13 +1,15 @@
+package com.tictactoe.entity;
+
 import java.util.Random;
 
-public class MediumPlayer implements Player{
+public class MediumPlayer extends Player {
     private String mySymbol;
     private String opponentSymbol;
-    private final Cells cells;
-    private final String showLevel = "Making move level \"medium\"";
 
     public MediumPlayer(Cells cells) {
         this.cells = cells;
+        String showLevel = "Making move level to " + Complexity.MEDIUM.getValue();
+        setShowLevel(showLevel);
     }
 
     public String getMySymbol() {
@@ -24,12 +26,6 @@ public class MediumPlayer implements Player{
 
     public void setOpponentSymbol(String opponentSymbol) {
         this.opponentSymbol = opponentSymbol;
-    }
-
-    public void turn() {
-        System.out.println(showLevel);
-        int[] getTurn = getCoordinates(cells);
-        setSymbol(getTurn);
     }
 
     @Override
@@ -68,15 +64,5 @@ public class MediumPlayer implements Player{
             }
         }
         return null;
-    }
-
-    @Override
-    public void setSymbol(int[] coordinates) {
-        cells.setValue(coordinates[0], coordinates[1], mySymbol);
-    }
-
-    @Override
-    public String toString() {
-        return showLevel;
     }
 }

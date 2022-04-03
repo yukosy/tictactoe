@@ -16,26 +16,6 @@ public class GameTest {
     Game game = new Game(cells, scanner);
     Player player = new MediumPlayer(cells);
 
-    @Test
-    public void whoIsPlayer_EASY() {
-        Assert.assertEquals(EasyPlayer.class, game.whoIsPlayer("easy").getClass());
-    }
-
-    @Test
-    public void whoIsPlayer_MEDIUM() {
-        Assert.assertEquals(MediumPlayer.class, game.whoIsPlayer("medium").getClass());
-    }
-
-    @Test
-    public void whoIsPlayer_HARD() {
-        Assert.assertEquals(HardPlayer.class, game.whoIsPlayer("hard").getClass());
-    }
-
-    @Test
-    public void whoIsPlayer_HUMAN() {
-        Assert.assertEquals(HumanPlayer.class, game.whoIsPlayer("user").getClass());
-    }
-
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(output));

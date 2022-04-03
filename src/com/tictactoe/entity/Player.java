@@ -3,9 +3,9 @@ package com.tictactoe.entity;
 public abstract class Player {
     private final String X_SYMBOL = "X";
     private final String O_SYMBOL = "O";
-    String mySymbol;
-    String opponentSymbol;
-    String showLevel;
+    private String mySymbol;
+    private String opponentSymbol;
+    private String showLevel;
     Cells cells;
 
     public void turn() {

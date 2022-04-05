@@ -1,8 +1,10 @@
+package com.tictactoe.entity;
+
 import java.util.ArrayList;
 
 public class Cells {
     private final String[][] cells = new String[4][4];
-    ArrayList<int[][]> allVariants = new ArrayList<>();
+    public ArrayList<int[][]> allVariants = new ArrayList<>();
 
     public void loadAllVariants() {
         allVariants.add(new int[][]{new int[]{1, 1}, new int[]{2, 1}, new int[]{3, 1}});

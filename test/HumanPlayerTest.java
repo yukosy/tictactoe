@@ -1,9 +1,9 @@
-import org.junit.Assert;
-import org.junit.Test;
+import com.tictactoe.entity.Cells;
+import com.tictactoe.entity.HumanPlayer;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Scanner;
-
-import static org.junit.Assert.*;
 
 public class HumanPlayerTest {
 
@@ -18,20 +18,8 @@ public class HumanPlayerTest {
         int[] expected = player.checkCoordinates(input);
         int[] actual = new int[]{1,1};
 
-        Assert.assertEquals(expected[0], actual[0]);
-        Assert.assertEquals(expected[1], actual[1]);
+        Assertions.assertEquals(expected[0], actual[0]);
+        Assertions.assertEquals(expected[1], actual[1]);
     }
 
-    @Test
-    public void setSymbol() {
-        Cells actual = new Cells();
-
-        player.setMySymbol("X");
-
-        player.setSymbol(new int[]{1,1});
-
-        actual.setValue(1,1,"X");
-
-        assertEquals(cells.getValue(1,1), actual.getValue(1,1));
-    }
 }

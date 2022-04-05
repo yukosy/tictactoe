@@ -1,17 +1,21 @@
+package com.tictactoe.entity;
+
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class HumanPlayer implements Player{
+public class HumanPlayer extends Player {
     private String mySymbol;
     private String opponentSymbol;
     private final Scanner scanner;
-    private final Cells cells;
-    private final String showLevel = "Human turn";
 
     public HumanPlayer(Scanner scanner, Cells cells) {
         this.scanner = scanner;
         this.cells = cells;
+        String showLevel = "Human turn";
+        setShowLevel(showLevel);
     }
+
+
 
     public String getMySymbol() {
         return mySymbol;
@@ -27,12 +31,6 @@ public class HumanPlayer implements Player{
 
     public void setOpponentSymbol(String opponentSymbol) {
         this.opponentSymbol = opponentSymbol;
-    }
-
-    public void turn() {
-        System.out.println(showLevel);
-        int[] getTurn = getCoordinates(cells);
-        setSymbol(getTurn);
     }
 
     @Override
@@ -64,15 +62,5 @@ public class HumanPlayer implements Player{
             System.out.println("You should enter numbers!");
             return getCoordinates(cells);
         }
-    }
-
-    public void setSymbol(int[] coordinates) {
-        cells.setValue(coordinates[0], coordinates[1], getMySymbol());
-    }
-
-
-    @Override
-    public String toString() {
-        return showLevel;
     }
 }
